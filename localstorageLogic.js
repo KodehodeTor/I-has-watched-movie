@@ -19,4 +19,6 @@ export function watchSaver(watchedNotWatched, navn, isWhat) {
             }
         }
     })
+
+    localStorage.setItem("movieSaved", JSON.stringify(middleArr))
 }
