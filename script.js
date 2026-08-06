@@ -7,7 +7,7 @@ import { filterMovie, recommendChanger } from "./values.js";
 import { createObject } from "./objectCreator.js";
 
 //Variables
-const cardCone = document.querySelector("#cardCont");
+const cardCont = document.querySelector("#cardCont");
 export const recommended = document.querySelector("#recommended");
 const movieInput = document.querySelector("#movie");
 const btnMovie = document.querySelector("#movieButton");
