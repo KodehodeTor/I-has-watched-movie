@@ -15,7 +15,7 @@ export function cardCreate(txt) {
   div.className = "movieCont";
 
   const img = document.createElement("img");
-  if (txt.movie) {
+  if (txt.recommended) {
     img.src = "./bilder/recommended.svg";
   } else {
     img.src = "./bilder/not_recommended.svg";
@@ -23,14 +23,14 @@ export function cardCreate(txt) {
   img.className = "recommendedImg";
 
   img.addEventListener("click", (e) => {
-    txt.movie = !txt.movie;
+    txt.recommended = !txt.recommended;
 
     if (txt.movie) {
       img.src = "./bilder/recommended.svg";
     } else {
       img.src = "./bilder/not_recommended.svg";
     }
-    watchedSaver(txt.recommended, txt.movie, "recommended");
+    watchedSaver(txt.recommended, txt.movie, "recommend");
   });
 
   const check = document.createElement("input");
