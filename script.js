@@ -23,3 +23,13 @@ export let isWatched = false;
 ratedBox.addEventListener("click", () => {
     isWatched = !isWatched
 })
+
+// Control array
+export let movieArray = [];
+
+//Click button to add new movie
+btnMovie.addEventListener("click", () => {
+    let input = movieInput.value
+    createObject(input)
+    filterTask
+})
