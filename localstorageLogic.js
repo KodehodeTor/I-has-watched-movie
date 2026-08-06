@@ -7,11 +7,11 @@ export function saveMovies(movie) {
 
     //Check if localstorage is empty:
     if (localStorage.getItem("movieSaved")) {
-        let movieSaved = JSON.parse(localStorage.getItem("movieSaved"))
+        let savedMovie = JSON.parse(localStorage.getItem("movieSaved"))
         const middleArr = []
 
         //Mixes two arrays into one
-        movieSaved.forEach((e) => {
+        savedMovie.forEach((e) => {
             middleArr.push(e)
         })
         movieArray.forEach((e) => {
@@ -22,6 +22,26 @@ export function saveMovies(movie) {
         localStorage.setItem("movieSaved", JSON.stringify(movieArray))
     } else {
         localStorage.setItem("movieSaved", JSON.stringify(movieArray))
+    }
+}
+
+export function checkStorage() {
+    //Check if localstorage is empty under key movieSaved
+    if (localStorage.getItem("movieSaved")) {
+        //Turns localstorage into array
+        let savedMovie = JSON.parse(localStorage.getItem("movieSaved"))
+
+        // Saves local storage to variable
+        savedMovie.forEach((e) => {
+            movieArray.push(e)
+        })
+
+        //Crates cards
+        savedMovie.forEach((e) => {
+            cardCreate(e)
+        })
+    } else {
+        console.log("no movies")
     }
 }
 
