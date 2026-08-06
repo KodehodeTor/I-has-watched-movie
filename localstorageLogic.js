@@ -1,3 +1,30 @@
+import { movieArray } from "./script.js"
+import { cardCreate } from "./CreateCard.js"
+
+//saves movie
+export function saveMovies(movie) {
+    movieArray.push(movie)
+
+    //Check if localstorage is empty:
+    if (localStorage.getItem("movieSaved")) {
+        let movieSaved = JSON.parse(localStorage.getItem("movieSaved"))
+        const middleArr = []
+
+        //Mixes two arrays into one
+        movieSaved.forEach((e) => {
+            middleArr.push(e)
+        })
+        movieArray.forEach((e) => {
+            middleArr.push(e)
+        })
+
+        // saves to local storage
+        localStorage.setItem("movieSaved", JSON.stringify(movieArray))
+    } else {
+        localStorage.setItem("movieSaved", JSON.stringify(movieArray))
+    }
+}
+
 export function watchSaver(watchedNotWatched, navn, isWhat) {
     let localStore = JSON.parse(localStorage.getItem("movieSaved"))
     let middleArr = []
