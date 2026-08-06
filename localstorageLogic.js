@@ -5,21 +5,27 @@ import { cardCreate } from "./CreateCard.js";
 export function saveMovies(movie) {
   movieArray.push(movie);
 
-  //Check if localstorage is empty:
+  // Check if localStorage already contains movies
   if (localStorage.getItem("movieSaved")) {
     let savedMovie = JSON.parse(localStorage.getItem("movieSaved"));
     const middleArr = [];
 
-    //Mixes two arrays into one
+    // Copy old movies
     savedMovie.forEach((e) => {
       middleArr.push(e);
     });
+
+    // Copy new movies
     movieArray.forEach((e) => {
       middleArr.push(e);
     });
 
-    // saves to local storage
-    localStorage.setItem("movieSaved", JSON.stringify(movieArray));
+    // Save BOTH old and new movies
+    localStorage.setItem("movieSaved", JSON.stringify(middleArr));
+
+    // Keep movieArray in sync
+    movieArray.length = 0;
+    middleArr.forEach((e) => movieArray.push(e));
   } else {
     localStorage.setItem("movieSaved", JSON.stringify(movieArray));
   }
