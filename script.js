@@ -33,3 +33,9 @@ btnMovie.addEventListener("click", () => {
     createObject(input)
     filterMovie()
 })
+
+// Filtering
+filter.addEventListener("change"m () => {
+    cardCont.innerHTML = ""
+    filterMovie()
+})
