@@ -1,7 +1,7 @@
 //Film- eller serieliste: Et system for å logge hvilke filmer og serier som er sett, samt gi vurderinger.
 
 //Imports:
-import { filterMovie } from "./values.js";
+import { filterMovie, recom } from "./values.js";
 
 //Variables 
 export const recommended = document.querySelector(#notRecommended)

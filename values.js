@@ -1,3 +1,7 @@
+import { recommended } from "./script.js";
+import { cardCreate } from "./CreateCard.js";
+export let isRecommendedClicked = false;
+
 export function recommendChanger() {
   if (!isRecommendedClicked) {
     recommended.src = "./bilder/recommended.svg";
