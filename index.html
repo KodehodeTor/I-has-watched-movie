@@ -16,13 +16,13 @@
         </label>
         <label for="watched">
           Has watched?:
-          <input type="checkbox" name="watched" id="isWatched" />
+          <input type="checkbox" name="watched" id="watchedInput" />
         </label>
         <figure id="imgContain">
           <img
             src="./bilder/not_recommended.svg"
             alt="An empty star with no color"
-            id="notRecommended"
+            id="recommended"
             class="recommendImg"
           />
         </figure>
@@ -31,10 +31,10 @@
       <hr />
       <select name="filter" id="filter">
         <option value="none">None</option>
+        <option value="recommended">Recommended</option>
+        <option value="notRecommended">Not recommended</option>
         <option value="watched">Watched</option>
-        <option value="notWatched">Not seen</option>
-        <option value="rated">rated</option>
-        <option value="notRated">Not rated</option>
+        <option value="notWatched">Not watched</option>
       </select>
       <section id="cardCont">
         <!-- Movies done -->
