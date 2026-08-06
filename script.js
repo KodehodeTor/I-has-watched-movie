@@ -1,11 +1,14 @@
 //Film- eller serieliste: Et system for å logge hvilke filmer og serier som er sett, samt gi vurderinger.
 
 //Imports:
+import { cardCreate } from "./CreateCard.js";
+import { saveMovies, checkStorage } from "./localstorageLogic.js";
 import { filterMovie, recom } from "./values.js";
+import { createObject } from "./objectCreator.js";
 
 //Variables 
-export const recommended = document.querySelector(#notRecommended)
 const cardCone = document.querySelector(#cardCont);
+export const recommended = document.querySelector(#notRecommended)
 const movieInput = document.querySelector(#movie);
 const btnMovie = document.querySelector(#movieButton);
 const ratedBox = document.querySelector(#watchedInput)
