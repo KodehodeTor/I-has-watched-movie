@@ -36,7 +36,7 @@ export function cardCreate(txt) {
   const check = document.createElement("input");
   check.type = "checkbox";
 
-  check.checked = txt.watchedSaver;
+  check.checked = txt.watched;
 
   const label = document.createElement("label");
   const labelTxt = document.createTextNode("Wached?: ");
