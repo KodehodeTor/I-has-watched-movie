@@ -7,5 +7,36 @@
     <link rel="stylesheet" href="style.css" />
     <script type="module" src="script.js"></script>
   </head>
-  <body></body>
+  <body>
+    <main>
+      <section id="inputSect">
+        <label for="movie">
+          Enter movie:
+          <input type="text" name="movie" id="movie" />
+        </label>
+        <label for="watched">
+          Has watched?:
+          <input type="checkbox" name="watched" id="isWatched" />
+        </label>
+        <figure id="imgContain">
+          <img
+            src="./bilder/not_watched.svg"
+            alt="An eye icon thats not filled with color"
+            id="notWatched"
+            class="watchImg"
+          />
+        </figure>
+        <button id="movieButton">Submit</button>
+      </section>
+      <hr />
+      <select name="filter" id="filter">
+        <option value="none">None</option>
+        <option value="watched">Watched</option>
+        <option value="notWatched">Not seen</option>
+        <option value="rated">rated</option>
+        <option value="notRated">Not rated</option>
+      </select>
+      <section id="cardCont"></section>
+    </main>
+  </body>
 </html>
