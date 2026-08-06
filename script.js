@@ -31,5 +31,5 @@ export let movieArray = [];
 btnMovie.addEventListener("click", () => {
     let input = movieInput.value
     createObject(input)
-    filterTask
+    filterMovie()
 })

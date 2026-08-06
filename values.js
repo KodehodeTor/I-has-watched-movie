@@ -6,3 +6,23 @@ export function recommendChanger() {
   }
   isRecommendedClicked = !isRecommendedClicked;
 }
+
+export function filterMovie() {
+    let fullArr = JSON.parse(localStorage.getItem("movieSaved"))
+    if (filterMovie.value === "none") {
+        console.log("Already full")
+  } else if (filter.value === "recommended") {
+    fullArr = fullArr.filter((movie) => movie.recommended == true);
+  } else if (filter.value === "notRecommended") {
+    fullArr = fullArr.filter((movie) => movie.recommended == false);
+  } else if (filter.value === "watched") {
+    fullArr = fullArr.filter((movie) => movie.watched == true);
+  } else if (filter.value === "notWatched") {
+    fullArr = fullArr.filter((movie) => movie.watched == false);
+  }
+  console.log(fullArr);
+  fullArr.forEach((e) => {
+    cardCreate(e);
+  });
+}
+}
