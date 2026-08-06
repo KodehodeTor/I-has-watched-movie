@@ -13,7 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
     checkStorage();
 })
 
-//Watched function
+//Recommended function
 recommended.addEventListner("click", () => {
     recommendChanger()
+})
+
+//Watched logic
+export let isWatched = false;
+ratedBox.addEventListener("click", () => {
+    isWatched = !isWatched
 })
