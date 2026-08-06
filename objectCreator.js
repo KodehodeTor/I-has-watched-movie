@@ -1,5 +1,5 @@
 import { saveMovies } from "./localstorageLogic.js";
-import { isWatched } from "./script";
+import { isWatched } from "./script.js";
 import { isRecommendedClicked } from "./values.js";
 
 export function createObject(movieTxt) {
