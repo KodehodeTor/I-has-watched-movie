@@ -18,7 +18,7 @@ export function cardCreate(txt) {
   if (txt.movie) {
     img.src = "./bilder/recommended.svg";
   } else {
-    img.src = ".bilder/not_recommended.svg";
+    img.src = "./bilder/not_recommended.svg";
   }
   img.className = "recommendedImg";
 
