@@ -36,10 +36,15 @@ export let movieArray = [];
 //Click button to add new movie
 btnMovie.addEventListener("click", () => {
   let input = movieInput.value;
+
   createObject(input);
+
+  // Remove existing cards
+  cardCont.innerHTML = "";
+
+  // Draw all cards again
   filterMovie();
 });
-
 // Filtering
 filter.addEventListener("change", () => {
   cardCont.innerHTML = "";

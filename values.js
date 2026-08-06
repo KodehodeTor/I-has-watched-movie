@@ -13,7 +13,7 @@ export function recommendChanger() {
 
 export function filterMovie() {
   let fullArr = JSON.parse(localStorage.getItem("movieSaved"));
-  if (filterMovie.value === "none") {
+  if (filter.value === "none") {
     console.log("Already full");
   } else if (filter.value === "recommended") {
     fullArr = fullArr.filter((movie) => movie.recommended == true);
