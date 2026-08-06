@@ -8,9 +8,9 @@ export function recommendChanger() {
 }
 
 export function filterMovie() {
-    let fullArr = JSON.parse(localStorage.getItem("movieSaved"))
-    if (filterMovie.value === "none") {
-        console.log("Already full")
+  let fullArr = JSON.parse(localStorage.getItem("movieSaved"));
+  if (filterMovie.value === "none") {
+    console.log("Already full");
   } else if (filter.value === "recommended") {
     fullArr = fullArr.filter((movie) => movie.recommended == true);
   } else if (filter.value === "notRecommended") {
@@ -24,5 +24,4 @@ export function filterMovie() {
   fullArr.forEach((e) => {
     cardCreate(e);
   });
-}
 }

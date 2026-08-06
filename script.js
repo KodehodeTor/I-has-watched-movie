@@ -1,5 +1,8 @@
 //Film- eller serieliste: Et system for å logge hvilke filmer og serier som er sett, samt gi vurderinger.
 
+//Imports:
+import { filterMovie } from "./values.js";
+
 //Variables 
 export const recommended = document.querySelector(#notRecommended)
 const cardCone = document.querySelector(#cardCont);
@@ -35,7 +38,7 @@ btnMovie.addEventListener("click", () => {
 })
 
 // Filtering
-filter.addEventListener("change"m () => {
+filter.addEventListener("change", () => {
     cardCont.innerHTML = ""
     filterMovie()
 })

@@ -28,5 +28,6 @@ export function cardCreate(txt) {
     } else {
       img.src = "./bilder/not_recommended.svg";
     }
+    watchedSaver(txt.recommended, txt.movie, "recommended");
   });
 }
