@@ -49,7 +49,7 @@ export function cardCreate(txt) {
   check.checked = txt.watched;
 
   const label = document.createElement("label");
-  const labelTxt = document.createTextNode("Wached?: ");
+  const labelTxt = document.createTextNode("Watched?: ");
   label.append(labelTxt);
   label.append(check);
 
