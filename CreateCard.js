@@ -14,6 +14,7 @@ export function cardCreate(txt) {
   const text = document.createTextNode(txt.movie);
   const deleteBtn = document.createElement("button");
   const img = document.createElement("img");
+  const statusCont = document.createElement("div");
 
   div.className = "movieCont";
 
@@ -41,8 +42,6 @@ export function cardCreate(txt) {
     deleteMovie(txt.movie);
   });
 
-  div.appendChild(deleteBtn);
-
   const check = document.createElement("input");
   check.type = "checkbox";
 
@@ -59,8 +58,15 @@ export function cardCreate(txt) {
   });
 
   p.append(text);
+
+  statusCont.className = "watched_recommended";
+
+  statusCont.appendChild(label);
+  statusCont.appendChild(img);
+
   div.appendChild(p);
-  div.appendChild(img);
-  div.appendChild(label);
+  div.appendChild(statusCont);
+  div.appendChild(deleteBtn);
+
   cardCont.appendChild(div);
 }
