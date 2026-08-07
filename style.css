@@ -40,12 +40,15 @@ main {
   display: flex;
   border: white solid 1px;
   margin: 10px;
+  justify-content: start;
 }
 
 .movieCont:hover {
   display: flex;
   border: white solid 1px;
   margin: 10px;
+  transform: scale(1.2);
+  box-shadow: inset 0 0 20px 5px rgba(186, 95, 190, 0.6);
 }
 
 button {
