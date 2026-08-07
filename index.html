@@ -21,10 +21,12 @@
           Enter movie:
           <input type="text" name="movie" id="movie" />
         </label>
+        <div class="watched_recommended">
         <label for="watched">
           Has watched?:
           <input type="checkbox" name="watched" id="watchedInput" />
         </label>
+        <p>Recommend?: </p>
         <figure id="imgContain">
           <img
             src="./bilder/not_recommended.svg"
@@ -32,6 +34,7 @@
             id="recommended"
             class="recommendImg"
           />
+          </div>
         </figure>
         <button id="movieButton">Submit</button>
       </section>

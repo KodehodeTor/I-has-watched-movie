@@ -5,7 +5,8 @@
 }
 
 h1 {
-  padding: 2rem;
+  padding: 1rem;
+  margin-top: 2rem;
 }
 
 html,
@@ -15,6 +16,19 @@ body {
   font-family: "DotGothic16", sans-serif;
   font-weight: 200;
   font-style: normal;
+  scroll-behavior: smooth;
+}
+body {
+  color: white;
+  background: linear-gradient(
+    180deg,
+    #000000 0%,
+    #12000c 40%,
+    #7a0048 85%,
+    #ff1493 100%
+  );
+
+  background-repeat: no-repeat;
 }
 
 main {
@@ -32,8 +46,6 @@ main {
   height: fit-content;
   padding: 20px 75px;
   margin: 10px auto;
-  background-color: #c42d7b1a;
-  border: white solid 1px;
 }
 
 .movieCont {
@@ -58,25 +70,39 @@ button {
   height: 24px;
   width: 60px;
   font-weight: bolder;
+  cursor: pointer;
 }
 
-body {
-  color: white;
-  background: linear-gradient(
-    180deg,
-    #000000 0%,
-    #12000c 40%,
-    #7a0048 85%,
-    #ff1493 100%
-  );
+#filter {
+  margin-bottom: 10px;
+}
 
-  background-repeat: no-repeat;
+#movieButton {
+  width: 200px;
 }
 
 #recommended {
   height: 25px;
+  cursor: pointer;
 }
 
 .recommendedImg {
   height: 25px;
+  cursor: pointer;
+}
+
+.watched_recommended {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+#inputSect {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 75 25px;
+  margin-bottom: 10px;
 }
