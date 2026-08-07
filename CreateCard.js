@@ -8,13 +8,15 @@ export function cardCreate(txt) {
   // watched: ""
   //}
 
+  // Variables
   const div = document.createElement("div");
   const p = document.createElement("p");
   const text = document.createTextNode(txt.movie);
+  const deleteBtn = document.createElement("button");
+  const img = document.createElement("img");
 
   div.className = "movieCont";
 
-  const img = document.createElement("img");
   if (txt.recommended) {
     img.src = "./bilder/recommended.svg";
   } else {
@@ -32,6 +34,14 @@ export function cardCreate(txt) {
     }
     watchedSaver(txt.recommended, txt.movie, "recommend");
   });
+
+  // Delete button
+  deleteBtn.textContent = "Delete";
+  deleteBtn.addEventListener("click", () => {
+    deleteMovie(txt.movie);
+  });
+
+  div.appendChild(deleteBtn);
 
   const check = document.createElement("input");
   check.type = "checkbox";
