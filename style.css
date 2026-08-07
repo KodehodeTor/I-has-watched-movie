@@ -42,6 +42,9 @@ main {
 }
 
 #cardCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 90%;
   height: fit-content;
   padding: 20px 75px;
@@ -60,7 +63,7 @@ button {
 }
 
 .movieCont {
-  width: 750px;
+  width: 600px;
   display: flex;
   border: white solid 1px;
   margin: 10px;
