@@ -54,22 +54,27 @@ export function cardCreate(txt) {
   label.append(labelTxt);
   label.append(check);
 
+  // Watched label click, toggles watched value. True becomes false and visa versa.
   label.addEventListener("click", (e) => {
     txt.watched = !txt.watched;
+    //Save the watched status.
     watchedSaver(txt.watched, txt.movie, "done");
   });
 
+  //Add the movie title.
   p.append(text);
 
+  //Status container
   statusCont.className = "watched_recommended";
-
   statusCont.appendChild(label);
   statusCont.appendChild(img);
 
+  //Add everything to moviecard
   div.appendChild(p);
   div.appendChild(statusCont);
   div.appendChild(deleteBtn);
 
+  //Add the finished card to page
   cardCont.appendChild(div);
 
   // Delete button
