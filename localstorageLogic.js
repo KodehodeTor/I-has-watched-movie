@@ -1,6 +1,9 @@
 import { movieArray } from "./script.js";
 import { cardCreate } from "./CreateCard.js";
 
+//Delete all button
+const deleteAllBtn = document.querySelector("#deleteAllBtn");
+
 //saves movie
 export function saveMovies(movie) {
   movieArray.push(movie);
@@ -51,3 +54,8 @@ export function watchSaver(watchedNotWatched, navn, isWhat) {
 
   localStorage.setItem("movieSaved", JSON.stringify(middleArr));
 }
+
+deleteAllBtn.addEventListener("click", () => {
+  localStorage.clear();
+  location.reload();
+});
