@@ -4,11 +4,13 @@ import { cardCreate } from "./CreateCard.js";
 //Delete all button
 const deleteAllBtn = document.querySelector("#deleteAllBtn");
 
+// Deletes a movie from localStorage
 export function deleteMovie(movieName) {
+  //Get saved movies from localStorage and convert from JSON to an array
   let localStore = JSON.parse(localStorage.getItem("movieSaved"));
-
+  // Create a new array containging all movies except the one deleted
   let filteredMovies = localStore.filter((e) => e.movie !== movieName);
-
+  // Save new array back to localStorage
   localStorage.setItem("movieSaved", JSON.stringify(filteredMovies));
 }
 
