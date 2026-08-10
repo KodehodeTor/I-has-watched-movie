@@ -40,6 +40,7 @@ export function checkStorage() {
   }
 }
 
+//Watched saver
 export function watchSaver(watchedNotWatched, navn, isWhat) {
   let localStore = JSON.parse(localStorage.getItem("movieSaved"));
   let middleArr = [];
@@ -65,6 +66,7 @@ export function watchSaver(watchedNotWatched, navn, isWhat) {
   localStorage.setItem("movieSaved", JSON.stringify(middleArr));
 }
 
+//Deletes all cards from localStorage, then refreshes site to display deletion.
 deleteAllBtn.addEventListener("click", () => {
   localStorage.clear();
   location.reload();

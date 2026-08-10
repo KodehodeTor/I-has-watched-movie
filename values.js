@@ -2,6 +2,7 @@ import { recommended } from "./script.js";
 import { cardCreate } from "./CreateCard.js";
 export let isRecommendedClicked = false;
 
+//Function to set recommended star from empty to filled. (Recommended/Not recommended)
 export function recommendChanger() {
   if (!isRecommendedClicked) {
     recommended.src = "./bilder/recommended.svg";
@@ -11,6 +12,7 @@ export function recommendChanger() {
   isRecommendedClicked = !isRecommendedClicked;
 }
 
+//Function for filtering the movies
 export function filterMovie() {
   let fullArr = JSON.parse(localStorage.getItem("movieSaved"));
   if (filter.value === "none") {
