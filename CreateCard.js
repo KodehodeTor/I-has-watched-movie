@@ -36,12 +36,6 @@ export function cardCreate(txt) {
     watchedSaver(txt.recommended, txt.movie, "recommend");
   });
 
-  // Delete button
-  deleteBtn.textContent = "Delete";
-  deleteBtn.addEventListener("click", () => {
-    deleteMovie(txt.movie);
-  });
-
   const check = document.createElement("input");
   check.type = "checkbox";
 
@@ -69,4 +63,11 @@ export function cardCreate(txt) {
   div.appendChild(deleteBtn);
 
   cardCont.appendChild(div);
+
+  // Delete button
+  deleteBtn.textContent = "Delete";
+  deleteBtn.addEventListener("click", () => {
+    div.remove();
+    deleteMovie(txt.movie);
+  });
 }
