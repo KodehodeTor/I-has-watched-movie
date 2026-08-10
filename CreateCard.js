@@ -8,7 +8,7 @@ export function cardCreate(txt) {
   // watched: ""
   //}
 
-  // Variables
+  // HTML elements
   const div = document.createElement("div");
   const p = document.createElement("p");
   const text = document.createTextNode(txt.movie);
@@ -16,31 +16,39 @@ export function cardCreate(txt) {
   const img = document.createElement("img");
   const statusCont = document.createElement("div");
 
+  // Classname for the card
   div.className = "movieCont";
 
+  //If the movie is recommended, show that, if not show not recommended.
   if (txt.recommended) {
     img.src = "./bilder/recommended.svg";
   } else {
     img.src = "./bilder/not_recommended.svg";
   }
+
+  //Classname for the recommended.
   img.className = "recommendedImg";
 
+  //Click recommended
   img.addEventListener("click", (e) => {
     txt.recommended = !txt.recommended;
-
+    //Recommended; True becomes false and visa versa.
     if (txt.movie) {
       img.src = "./bilder/recommended.svg";
     } else {
       img.src = "./bilder/not_recommended.svg";
     }
+
+    //Save the recommended
     watchedSaver(txt.recommended, txt.movie, "recommend");
   });
 
+  //Create checkbox, make the input a checkbox, checkbox has saved watch status.
   const check = document.createElement("input");
   check.type = "checkbox";
-
   check.checked = txt.watched;
 
+  // Watched label, create text "Watched?: ", add text to label. Add Checkbox to label.
   const label = document.createElement("label");
   const labelTxt = document.createTextNode("Watched?: ");
   label.append(labelTxt);
@@ -68,6 +76,14 @@ export function cardCreate(txt) {
   deleteBtn.textContent = "Delete";
   deleteBtn.addEventListener("click", () => {
     div.remove();
-    deleteMovie(txt.movie);
+    // deleteMovie(txt.movie);
+    console.log(deleteBtn);
   });
 }
+
+//Remaining issue:
+
+// deleteMovie is not a function, we need to make that in localstorage and import it to CreateCard.
+// 1. Get exisiting movie array from local storage.
+// filter out the movie that matches the deleted title
+// save the new filtered list back to local storage.
