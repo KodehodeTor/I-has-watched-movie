@@ -1,8 +1,6 @@
 import { movieArray } from "./script.js";
 import { cardCreate } from "./CreateCard.js";
 
-
-
 //Delete all button
 const deleteAllBtn = document.querySelector("#deleteAllBtn");
 
