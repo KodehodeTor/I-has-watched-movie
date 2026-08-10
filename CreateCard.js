@@ -1,4 +1,4 @@
-import { watchSaver } from "./localstorageLogic.js";
+import { watchSaver, deleteMovie } from "./localstorageLogic.js";
 
 //Creates Cards
 export function cardCreate(txt) {
@@ -81,14 +81,7 @@ export function cardCreate(txt) {
   deleteBtn.textContent = "Delete";
   deleteBtn.addEventListener("click", () => {
     div.remove();
-    // deleteMovie(txt.movie);
-    console.log(deleteBtn);
+    deleteMovie(txt.movie);
+    // console.log(deleteBtn);
   });
 }
-
-//Remaining issue:
-
-// deleteMovie is not a function, we need to make that in localstorage and import it to CreateCard.
-// 1. Get exisiting movie array from local storage.
-// filter out the movie that matches the deleted title
-// save the new filtered list back to local storage.

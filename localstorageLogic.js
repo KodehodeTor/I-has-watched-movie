@@ -4,6 +4,14 @@ import { cardCreate } from "./CreateCard.js";
 //Delete all button
 const deleteAllBtn = document.querySelector("#deleteAllBtn");
 
+export function deleteMovie(movieName) {
+  let localStore = JSON.parse(localStorage.getItem("movieSaved"));
+
+  let filteredMovies = localStore.filter((e) => e.movie !== movieName);
+
+  localStorage.setItem("movieSaved", JSON.stringify(filteredMovies));
+}
+
 //saves movie
 export function saveMovies(movie) {
   movieArray.push(movie);
