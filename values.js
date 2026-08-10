@@ -16,7 +16,7 @@ export function recommendChanger() {
 export function filterMovie() {
   let fullArr = JSON.parse(localStorage.getItem("movieSaved"));
   if (filter.value === "none") {
-    console.log("Already full");
+    console.log("No movies");
   } else if (filter.value === "recommended") {
     fullArr = fullArr.filter((movie) => movie.recommended == true);
   } else if (filter.value === "notRecommended") {
