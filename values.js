@@ -14,18 +14,26 @@ export function recommendChanger() {
 
 //Function for filtering the movies
 export function filterMovie() {
+  //Converts saved movie from localStorage to array
   let fullArr = JSON.parse(localStorage.getItem("movieSaved"));
+  //If no filter is seleceted, dont filter movies
   if (filter.value === "none") {
     console.log("No movies");
+    //Filter for recommended
   } else if (filter.value === "recommended") {
     fullArr = fullArr.filter((movie) => movie.recommended == true);
+    //Filter for not recommended
   } else if (filter.value === "notRecommended") {
     fullArr = fullArr.filter((movie) => movie.recommended == false);
   } else if (filter.value === "watched") {
+    //Filter for watched
     fullArr = fullArr.filter((movie) => movie.watched == true);
   } else if (filter.value === "notWatched") {
+    //Filter for not watched
     fullArr = fullArr.filter((movie) => movie.watched == false);
   }
+
+  //Create a movie card for every movie thats filtered
   console.log(fullArr);
   fullArr.forEach((e) => {
     cardCreate(e);

@@ -42,17 +42,24 @@ export function checkStorage() {
 
 //Watched saver
 export function watchSaver(watchedNotWatched, navn, isWhat) {
+  //Get saved movies from localStorage
   let localStore = JSON.parse(localStorage.getItem("movieSaved"));
   let middleArr = [];
 
+  //Goes through every movie in localStorage
   localStore.forEach((e) => {
+    //Check if we are updating watched
     if (isWhat === "watched") {
+      //Find movie that was clicked
       if (e.movie === navn) {
+        //Change its watched value
         e.watched = watchedNotWatched;
+        //Add the updated movie to the new array
         middleArr.push(e);
       } else {
         middleArr.push(e);
       }
+      //Same for recommended as over for movie
     } else if (isWhat === "recommend") {
       if (e.movie === navn) {
         e.recommended = watchedNotWatched;
@@ -63,6 +70,7 @@ export function watchSaver(watchedNotWatched, navn, isWhat) {
     }
   });
 
+  //Save the updated movie array back to LocalStorage
   localStorage.setItem("movieSaved", JSON.stringify(middleArr));
 }
 
