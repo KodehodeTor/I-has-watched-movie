@@ -59,12 +59,12 @@ function sortMovie(sort) {
     if (sort === "az") {
       return a.dataset.title
         .toLowerCase()
-        .localCompare(b.dataset.title.toLowerCase());
+        .localeCompare(b.dataset.title.toLowerCase());
     }
     if (sort === "za") {
       return b.dataset.title
         .toLowerCase()
-        .localCompare(a.dataset.title.toLowerCase());
+        .localeCompare(a.dataset.title.toLowerCase());
     }
     if (sort === "recommended") {
       // is (true) go to top
