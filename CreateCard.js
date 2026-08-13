@@ -9,6 +9,7 @@ export function cardCreate(txt) {
   //}
 
   // HTML elements
+  const cardCont = document.querySelector("#cardCont");
   const div = document.createElement("div");
   const p = document.createElement("p");
   const text = document.createTextNode(txt.movie);
