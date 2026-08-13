@@ -50,3 +50,47 @@ filter.addEventListener("change", () => {
   cardCont.innerHTML = "";
   filterMovie();
 });
+
+function sortMovie(sort) {
+  //Grabs all cards in the DOM
+  const cards = Array.from(cardCont.querySelectorAll(".movieCont"));
+
+  cards.sort((a, b) => {
+    if (sort === "az") {
+      return a.dataset.title
+        .toLowerCase()
+        .localCompare(b.dataset.title.toLowerCase());
+    }
+    if (sort === "za") {
+      return b.dataset.title
+        .toLowerCase()
+        .localCompare(a.dataset.title.toLowerCase());
+    }
+    if (sort === "recommended") {
+      // is (true) go to top
+      return b.dataset.recommended - a.dataset.recommended;
+    }
+    if (sort === "watched") {
+      return b.dataset.watched - a.dataset.watched;
+    }
+
+    return 0;
+  });
+
+  cards.forEach((card) => cardCont.appendChild(card));
+}
+
+//Attaching buttons to click listeners
+
+document
+  .querySelector("#a_z_btn")
+  .addEventListener("click", () => sortMovie("az"));
+document
+  .querySelector("#z_a_btn")
+  .addEventListener("click", () => sortMovie("za"));
+document
+  .querySelector("#recommended_btn")
+  .addEventListener("click", () => sortMovie("recommended"));
+document
+  .querySelector("#watched_btn")
+  .addEventListener("click", () => sortMovie("watched"));
