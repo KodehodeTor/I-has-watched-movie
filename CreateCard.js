@@ -31,8 +31,11 @@ export function cardCreate(txt) {
 
   //Click recommended
   img.addEventListener("click", (e) => {
-    txt.recommended = !txt.recommended;
     //Recommended; True becomes false and visa versa.
+    txt.recommended = !txt.recommended;
+    //dataset with boolean sorting
+    div.dataset.recommended = txt.recommended ? "1" : "0";
+
     if (txt.movie) {
       img.src = "./bilder/recommended.svg";
     } else {
@@ -57,6 +60,8 @@ export function cardCreate(txt) {
   // Watched label click, toggles watched value. True becomes false and visa versa.
   label.addEventListener("click", (e) => {
     txt.watched = !txt.watched;
+    //dataset with boolean sorting
+    div.dataset.watched = txt.watched ? "1" : "0";
     //Save the watched status.
     watchedSaver(txt.watched, txt.movie, "done");
   });
