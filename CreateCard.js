@@ -2,12 +2,6 @@ import { watchSaver, deleteMovie } from "./localstorageLogic.js";
 
 //Creates Cards
 export function cardCreate(txt) {
-  // txt = {
-  // movie: "",
-  // recommended: "",
-  // watched: ""
-  //}
-
   // HTML elements
   const cardCont = document.querySelector("#cardCont");
   const div = document.createElement("div");
