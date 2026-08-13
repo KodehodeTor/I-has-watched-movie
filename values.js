@@ -16,8 +16,8 @@ const filter = document.querySelector("#filter");
 
 //Function for filtering the movies
 export function filterMovie() {
-  //Converts saved movie from localStorage to array
-  let fullArr = JSON.parse(localStorage.getItem("movieSaved"));
+  //Converts saved movie from localStorage to movieSaved array OR empty array
+  let fullArr = JSON.parse(localStorage.getItem("movieSaved")) || [];
   //If no filter is seleceted, dont filter movies
   if (filter.value === "none") {
     console.log("No movies");
