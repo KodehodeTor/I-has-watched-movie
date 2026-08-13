@@ -12,6 +12,8 @@ export function recommendChanger() {
   isRecommendedClicked = !isRecommendedClicked;
 }
 
+const filter = document.querySelector("#filter");
+
 //Function for filtering the movies
 export function filterMovie() {
   //Converts saved movie from localStorage to array
