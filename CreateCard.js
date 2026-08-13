@@ -14,6 +14,11 @@ export function cardCreate(txt) {
   // Classname for the card
   div.className = "movieCont";
 
+  //Dataset for sorting
+  div.dataset.title = txt.movie;
+  div.dataset.recommended = txt.recommended ? "1" : "0";
+  div.dataset.watched = txt.watched ? "1" : "0";
+
   //If the movie is recommended, show that, if not show not recommended.
   if (txt.recommended) {
     img.src = "./bilder/recommended.svg";
@@ -80,3 +85,7 @@ export function cardCreate(txt) {
     // console.log(deleteBtn);
   });
 }
+
+cardCreate();
+
+document.querySelector();
