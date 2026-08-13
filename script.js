@@ -17,6 +17,8 @@ const filter = document.querySelector("#filter");
 //Start check
 document.addEventListener("DOMContentLoaded", () => {
   checkStorage();
+  //Update movie stats
+  movieStats();
 });
 
 //Recommended function
@@ -44,6 +46,9 @@ btnMovie.addEventListener("click", () => {
 
   // Draw all cards again
   filterMovie();
+
+  //Updates movieStats
+  movieStats();
 });
 // Filtering
 filter.addEventListener("change", () => {
@@ -94,3 +99,25 @@ document
 document
   .querySelector("#watched_btn")
   .addEventListener("click", () => sortMovie("watched"));
+
+//Movie stats -> reduce()
+function movieStats() {
+  const stats = movieArray.reduce(
+    (store, movie) => {
+      // Increment total count
+      store.total++;
+      // Increment watched if true
+      if (movie.watched) {
+        store.watchedCount++;
+      }
+      // Increment recommended if true
+      if (movie.recommended) {
+        store.recCount++;
+      }
+      return store;
+    },
+    { total: 0, watchedCount: 0, recCount: 0 },
+  );
+  document.querySelector("#stat_display").textContent =
+    `Watched ${stats.watchedCount}/${stats.total} movies!`;
+}
