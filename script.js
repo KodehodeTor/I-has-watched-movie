@@ -118,6 +118,11 @@ export function movieStats() {
     },
     { total: 0, watchedCount: 0, recCount: 0 },
   );
+
+  //Destructure stats
+  const { watchedCount, total } = stats;
+
+  //Display stats in index
   document.querySelector("#stat_display").textContent =
-    `Watched ${stats.watchedCount}/${stats.total} movies!`;
+    `I has watched ${watchedCount} / ${total} movies`;
 }
