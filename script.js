@@ -56,7 +56,7 @@ filter.addEventListener("change", () => {
   filterMovie();
 });
 
-function sortMovie(sort) {
+export function sortMovie(sort) {
   //Grabs all cards in the DOM
   const cards = Array.from(cardCont.querySelectorAll(".movieCont"));
 
@@ -101,7 +101,7 @@ document
   .addEventListener("click", () => sortMovie("watched"));
 
 //Movie stats -> reduce()
-function movieStats() {
+export function movieStats() {
   const stats = movieArray.reduce(
     (store, movie) => {
       // Increment total count

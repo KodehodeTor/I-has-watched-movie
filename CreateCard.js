@@ -1,5 +1,7 @@
 import { watchSaver, deleteMovie } from "./localstorageLogic.js";
 
+import { movieStats } from "./script.js";
+
 //Creates Cards
 export function cardCreate(txt) {
   // HTML elements
@@ -86,6 +88,6 @@ export function cardCreate(txt) {
   deleteBtn.addEventListener("click", () => {
     div.remove();
     deleteMovie(txt.movie);
-    // console.log(deleteBtn);
+    movieStats();
   });
 }
