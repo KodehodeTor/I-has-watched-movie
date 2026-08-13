@@ -56,32 +56,41 @@ filter.addEventListener("change", () => {
   filterMovie();
 });
 
+// Sorts movie cards
 export function sortMovie(sort) {
   //Grabs all cards in the DOM
   const cards = Array.from(cardCont.querySelectorAll(".movieCont"));
-
+  //Sorts card
   cards.sort((a, b) => {
     if (sort === "az") {
+      // Sorts movie titles from A to Z.
       return a.dataset.title
         .toLowerCase()
         .localeCompare(b.dataset.title.toLowerCase());
     }
+    //Sports movie titles from Z to A.
     if (sort === "za") {
       return b.dataset.title
         .toLowerCase()
         .localeCompare(a.dataset.title.toLowerCase());
     }
+    //Sorts recommended movies.
+    //True = 1 false = 0
     if (sort === "recommended") {
-      // is (true) go to top
+      // if true go to top
       return b.dataset.recommended - a.dataset.recommended;
     }
+    //Sorts watched movies.
+    //True = 1 false = 0
     if (sort === "watched") {
+      //if true go to top
       return b.dataset.watched - a.dataset.watched;
     }
-
+    //If no sort; keep current order.
     return 0;
   });
 
+  //Adds sorted cards
   cards.forEach((card) => cardCont.appendChild(card));
 }
 
